@@ -41,27 +41,14 @@
   img{display:block;max-width:100%}
   ::selection{background:var(--accent);color:#111}
 
-  /* ---------- top bar ---------- */
-  .topbar{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:18px var(--pad);
-    mix-blend-mode:difference;
-    color:#fff;
-  }
-  .topbar .mark{
-    font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;
-  }
   /* ---------- hero ---------- */
   .hero{
     position:relative;z-index:1;
     min-height:100svh;
-    padding:clamp(80px,11vh,120px) var(--pad) clamp(36px,6vh,64px);
-    display:flex;flex-direction:column;justify-content:space-between;
+    padding:clamp(40px,7vh,72px) var(--pad) clamp(36px,6vh,64px);
+    display:flex;flex-direction:column;justify-content:center;
   }
-  .hero-name{
-    margin-top:auto;
-  }
+  .hero-name{}
   .hero h1{
     font-family:"Climate Crisis",sans-serif;
     font-weight:400;
@@ -102,7 +89,8 @@
     margin-bottom:clamp(34px,5vh,60px);
   }
   @media(min-width:900px){
-    .project-head{grid-template-columns:1.15fr 1fr;align-items:end;gap:40px}
+    .project-head{grid-template-columns:1.15fr 1fr;align-items:start;column-gap:40px;row-gap:20px}
+    .project-head>.p-index{grid-column:1/-1}
   }
   .p-meta{display:flex;flex-direction:column;gap:14px}
   .p-index{
@@ -218,10 +206,6 @@
 </head>
 <body>
 
-<header class="topbar" id="topbar">
-  <a href="#top" class="mark">Thalyta Cavalli</a>
-</header>
-
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-name">
@@ -245,13 +229,14 @@
   <!-- 01 IPRADE -->
   <article class="project" data-reveal>
     <div class="project-head">
+      <span class="p-index">2026</span>
       <div class="p-meta">
-        <span class="p-index">2026</span>
         <h2>IPRADE<br>&amp; CBDE</h2>
-        <p class="p-role">Diagramação</p>
+        <p class="p-role">Diagramação · Web &amp; UI</p>
       </div>
       <div class="p-meta">
-        <p class="p-desc">Diagramação do site do Instituto Paranaense de Direito Eleitoral e do X Congresso Brasileiro de Direito Eleitoral. Um sistema de páginas para conteúdo jurídico denso — institucional, artigos e notícias — organizado com hierarquia clara, ritmo de leitura e sobriedade.</p>
+        <p class="p-desc">Diagramação do site do Instituto Paranaense de Direito Eleitoral e do X Congresso Brasileiro de Direito Eleitoral. Um sistema de páginas para conteúdo jurídico denso: institucional, artigos e notícias, organizado com hierarquia clara, ritmo de leitura e sobriedade.</p>
+        <a class="p-link" href="https://www.iprade.com.br/portal/" target="_blank" rel="noopener">Acesse o site <span class="arw">→</span></a>
       </div>
     </div>
 
@@ -269,13 +254,14 @@
   <!-- 02 HIPERZOO -->
   <article class="project" data-reveal>
     <div class="project-head">
+      <span class="p-index">2026</span>
       <div class="p-meta">
-        <span class="p-index">2026</span>
         <h2>Hiperzoo</h2>
-        <p class="p-role">Diagramação</p>
+        <p class="p-role">Diagramação · Web &amp; UI</p>
       </div>
       <div class="p-meta">
-        <p class="p-desc">Layout de e-commerce e páginas institucionais para a rede pet Hiperzoo. Diagramação de catálogo, página de produto, blog, estética e lojas — equilibrando alto volume de informação comercial com clareza, leveza e uma navegação que respira.</p>
+        <p class="p-desc">Layout de e-commerce e páginas institucionais para a rede pet Hiperzoo. Diagramação de catálogo, página de produto, blog, estética e lojas, equilibrando alto volume de informação comercial com clareza, leveza e uma navegação que respira.</p>
+        <a class="p-link" href="https://www.hiperzoo.com.br/" target="_blank" rel="noopener">Acesse o site <span class="arw">→</span></a>
       </div>
     </div>
 
@@ -297,33 +283,32 @@
   <!-- 03 CIDADE VERNACULAR -->
   <article class="project" data-reveal>
     <div class="project-head">
+      <span class="p-index">2017</span>
       <div class="p-meta">
-        <span class="p-index">2017</span>
         <h2>Cidade<br>Vernacular</h2>
-        <p class="p-role">Fotografia · Diagramação · Livro <span style="font-style:normal;opacity:.6">“CWB CITY”</span></p>
+        <p class="p-role">Fotografia &amp; Diagramação</p>
       </div>
       <div class="p-meta">
-        <p class="p-desc">Levantamento de referência sobre o design vernacular de Curitiba: letreiros pintados à mão, grafites, recados e tipografias espontâneas — produzidos por pessoas comuns com um único desejo, comunicar. A pesquisa virou o livro <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent)">CWB CITY</em>.</p>
+        <p class="p-desc">Levantamento de referência sobre o design vernacular de Curitiba: letreiros pintados à mão, grafites, recados e tipografias espontâneas, produzidos por pessoas comuns com um único desejo, comunicar. A pesquisa virou o livro <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent)">CWB CITY</em>.</p>
         <a class="p-link" href="https://www.behance.net/gallery/69816447/Cidade-Vernacular-Fotografia-e-Diagramacao" target="_blank" rel="noopener">Ver no Behance <span class="arw">→</span></a>
       </div>
     </div>
 
     <div class="collage">
-      <figure class="c-band"><img src="assets/cidade-vernacular/cv-01.webp" alt="Cidade Vernacular — capa tipográfica"><figcaption>Identidade do projeto</figcaption></figure>
       <figure class="c-feat"><img src="assets/cidade-vernacular/cv-04.webp" alt="Livro CWB City — miolo com tipografias"><figcaption>Livro “CWB CITY” — diagramação do miolo</figcaption></figure>
       <figure class="c-tall"><img src="assets/cidade-vernacular/cv-06.webp" alt="Letreiro pintado à mão em detalhe"><figcaption>Lettering pintado à mão</figcaption></figure>
       <figure class="c-half"><img src="assets/cidade-vernacular/cv-05.webp" alt="Grafite urbano — Campainha"><figcaption>Recados na rua</figcaption></figure>
       <figure class="c-half"><img src="assets/cidade-vernacular/cv-07.webp" alt="Placa Pierogi Original"><figcaption>@cidadevernacular</figcaption></figure>
       <figure class="c-half"><img src="assets/cidade-vernacular/cv-02.png" alt="Spread editorial — cortador de frios"><figcaption>Curitiba que não está no catálogo</figcaption></figure>
-      <figure class="c-half"><img src="assets/cidade-vernacular/cv-03.png" alt="Mapa do percurso"><figcaption>Percurso de pesquisa</figcaption></figure>
+      <figure class="c-half"><img src="assets/cidade-vernacular/cv-01.webp" alt="Cidade Vernacular — identidade tipográfica"><figcaption>Identidade do projeto</figcaption></figure>
     </div>
   </article>
 
   <!-- 04 BIENAL -->
   <article class="project" data-reveal>
     <div class="project-head">
+      <span class="p-index">2018</span>
       <div class="p-meta">
-        <span class="p-index">2018</span>
         <h2>Bienal de<br>Quadrinhos</h2>
         <p class="p-role">Sistema visual · Sinalização · Design gráfico</p>
       </div>
@@ -347,13 +332,13 @@
 <!-- FOOTER -->
 <footer id="contato">
   <div id="sobre" class="ft-cta">
-    Vamos<br>conversar <a href="mailto:contato@thalytacavalli.com">↗</a>
+    Vamos<br>conversar <a href="mailto:thalytacavall@gmail.com">↗</a>
   </div>
   <div class="ft-row">
     <div class="ft-links">
-      <a href="mailto:contato@thalytacavalli.com">E-mail</a>
-      <a href="https://www.behance.net/gallery/69816447/Cidade-Vernacular-Fotografia-e-Diagramacao" target="_blank" rel="noopener">Behance</a>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:thalytacavall@gmail.com">E-mail</a>
+      <a href="https://www.behance.net/ThalytaCavalli" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.linkedin.com/in/thalyta-cavalli/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <p class="ft-meta">Thalyta Cavalli · Curitiba/PR · © 2026</p>
   </div>
