@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thalyta Cavalli — Gestão de projetos criativos + design</title>
+<meta name="description" content="Portfólio de Thalyta Cavalli — gestão de projetos criativos e design, com foco em diagramação editorial e digital." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Climate+Crisis&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0a0b;
+    --bg-soft:#0f0f11;
+    --panel:#141416;
+    --fg:#ededea;
+    --muted:#8c8c87;
+    --faint:#5a5a56;
+    --line:rgba(255,255,255,.12);
+    --line-soft:rgba(255,255,255,.07);
+    --accent:#cdb389;          /* warm sand */
+    --frame-h:600px;
+    --pad:clamp(20px,5vw,80px);
+    --maxw:1600px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:"Archivo",system-ui,sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  body::before{ /* subtle depth */
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(120% 80% at 80% -10%,rgba(205,179,137,.06),transparent 55%);
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  ::selection{background:var(--accent);color:#111}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px var(--pad);
+    mix-blend-mode:difference;
+    color:#fff;
+  }
+  .topbar .mark{
+    font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;
+  }
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;z-index:1;
+    min-height:100svh;
+    padding:clamp(80px,11vh,120px) var(--pad) clamp(36px,6vh,64px);
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .hero-name{
+    margin-top:auto;
+  }
+  .hero h1{
+    font-family:"Climate Crisis",sans-serif;
+    font-weight:400;
+    font-size:clamp(2.3rem,10.3vw,11rem);
+    line-height:1;
+    letter-spacing:0;
+    text-transform:uppercase;
+  }
+  .hero h1 .ln{display:block}
+  .hero h1 .ln span{display:block;opacity:0;transform:translateY(36%);animation:rise 1s cubic-bezier(.16,1,.3,1) forwards}
+  .hero h1 .ln:nth-child(2) span{animation-delay:.1s}
+  @keyframes rise{to{transform:none;opacity:1}}
+  .hero-foot{
+    margin-top:clamp(28px,5vh,56px);
+    display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between;
+    border-top:1px solid var(--line-soft);padding-top:26px;
+  }
+  .hero .subtitle{
+    font-size:clamp(1.15rem,2.4vw,1.9rem);
+    font-weight:500;max-width:30ch;line-height:1.25;
+  }
+  .hero .subtitle em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--accent)}
+
+  /* ---------- projects ---------- */
+  .work{position:relative;z-index:1;padding:clamp(60px,12vh,140px) 0 0}
+  .section-label{
+    padding:0 var(--pad);margin-bottom:clamp(30px,6vh,70px);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);
+    border-bottom:1px solid var(--line-soft);padding-bottom:18px;
+  }
+
+  .project{padding:clamp(56px,9vh,120px) var(--pad);max-width:var(--maxw);margin:0 auto;width:100%}
+  .project + .project{border-top:1px solid var(--line-soft)}
+
+  .project-head{
+    display:grid;grid-template-columns:1fr;gap:18px;
+    margin-bottom:clamp(34px,5vh,60px);
+  }
+  @media(min-width:900px){
+    .project-head{grid-template-columns:1.15fr 1fr;align-items:end;gap:40px}
+  }
+  .p-meta{display:flex;flex-direction:column;gap:14px}
+  .p-index{
+    font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+    display:flex;gap:14px;align-items:center;
+  }
+  .project h2{
+    font-weight:900;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;
+    font-size:clamp(2.6rem,6.4vw,6rem);
+  }
+  .p-role{
+    font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(1.05rem,1.7vw,1.45rem);
+    color:var(--fg);opacity:.85;
+  }
+  .p-desc{color:var(--muted);font-size:clamp(.98rem,1.25vw,1.12rem);max-width:52ch;line-height:1.6}
+  .p-link{
+    align-self:start;margin-top:8px;display:inline-flex;gap:10px;align-items:center;
+    font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--line);padding-bottom:5px;transition:.3s;width:fit-content;
+  }
+  .p-link:hover{color:var(--accent);border-color:var(--accent);gap:16px}
+  .p-link .arw{transition:transform .3s}
+  .p-link:hover .arw{transform:translateX(4px)}
+
+  /* browser frame (web projects) */
+  .browser{
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);
+    box-shadow:0 40px 90px -50px rgba(0,0,0,.9);
+  }
+  .browser-bar{
+    display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid var(--line-soft);
+    background:var(--bg-soft);
+  }
+  .browser-bar .dots{display:flex;gap:7px}
+  .browser-bar .dots i{width:11px;height:11px;border-radius:50%;background:#2c2c30}
+  .browser-bar .url{
+    margin-left:10px;font-size:.72rem;color:var(--faint);letter-spacing:.04em;
+    background:#1b1b1e;border-radius:6px;padding:5px 14px;flex:1;max-width:340px;
+  }
+  .viewport{height:var(--frame-h);overflow:hidden;position:relative}
+  .viewport img{width:100%;transition:transform 9s cubic-bezier(.4,0,.2,1)}
+  .browser:hover .viewport img{transform:translateY(calc(-100% + var(--frame-h)))}
+  .viewport::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:80px;pointer-events:none;
+    background:linear-gradient(transparent,rgba(10,10,11,.5));opacity:1;transition:.4s
+  }
+  .browser:hover .viewport::after{opacity:0}
+
+  .subgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+  .subgrid.cols-3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:920px){.subgrid,.subgrid.cols-3{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.subgrid,.subgrid.cols-3{grid-template-columns:1fr}}
+  .card{
+    border:1px solid var(--line-soft);border-radius:10px;overflow:hidden;background:var(--panel);position:relative;
+  }
+  .card .crop{height:300px;overflow:hidden}
+  .card .crop img{width:100%;object-fit:cover;object-position:top;transition:transform 6s cubic-bezier(.4,0,.2,1)}
+  .card:hover .crop img{transform:translateY(calc(-100% + 300px))}
+  .card .tag{
+    position:absolute;top:12px;left:12px;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+    background:rgba(10,10,11,.7);backdrop-filter:blur(6px);padding:6px 11px;border-radius:30px;color:var(--fg);
+  }
+
+  /* collage (editorial projects) */
+  .collage{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:118px;gap:16px}
+  .collage figure{overflow:hidden;border-radius:10px;background:var(--panel);position:relative}
+  .collage img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+  .collage figure:hover img{transform:scale(1.045)}
+  .collage figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:16px;font-size:.72rem;letter-spacing:.04em;
+    color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.65));opacity:0;transition:.4s;
+    font-family:"Instrument Serif",serif;font-style:italic;font-size:.95rem;
+  }
+  .collage figure:hover figcaption{opacity:1}
+  .c-feat{grid-column:span 4;grid-row:span 4}
+  .c-tall{grid-column:span 2;grid-row:span 4}
+  .c-half{grid-column:span 3;grid-row:span 3}
+  .c-wide{grid-column:span 4;grid-row:span 3}
+  .c-sq{grid-column:span 2;grid-row:span 3}
+  .c-band{grid-column:span 6;grid-row:span 2}
+  @media(max-width:760px){
+    .collage{grid-template-columns:1fr;grid-auto-rows:auto;gap:12px}
+    .collage figure{grid-column:1/-1!important;grid-row:auto!important;aspect-ratio:16/10}
+    .collage .c-tall{aspect-ratio:3/4}
+    .collage figcaption{opacity:1}
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    position:relative;z-index:1;margin-top:clamp(60px,12vh,140px);
+    padding:clamp(60px,10vh,120px) var(--pad) 48px;border-top:1px solid var(--line-soft);
+  }
+  .ft-cta{font-family:"Climate Crisis",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:1.02;
+    font-size:clamp(2.2rem,8vw,7rem);}
+  .ft-cta a{transition:color .3s}
+  .ft-cta a:hover{color:var(--accent)}
+  .ft-row{display:flex;flex-wrap:wrap;gap:30px 60px;justify-content:space-between;align-items:flex-end;margin-top:clamp(40px,6vh,72px)}
+  .ft-links{display:flex;flex-wrap:wrap;gap:14px 28px}
+  .ft-links a{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8;transition:.25s;border-bottom:1px solid transparent;padding-bottom:3px}
+  .ft-links a:hover{opacity:1;border-color:var(--accent);color:var(--accent)}
+  .ft-meta{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+  /* reveal */
+  [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  [data-reveal].in{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .hero h1 .ln span{transform:none}
+    [data-reveal]{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <a href="#top" class="mark">Thalyta Cavalli</a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-name">
+    <h1>
+      <span class="ln"><span>Thalyta</span></span>
+      <span class="ln"><span>Cavalli</span></span>
+    </h1>
+    <div class="hero-foot">
+      <p class="subtitle">Gestão de projetos criativos <em>+ design</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<main class="work" id="trabalhos">
+  <div class="section-label">
+    <span>Trabalhos selecionados</span>
+    <span>04 projetos</span>
+  </div>
+
+  <!-- 01 IPRADE -->
+  <article class="project" data-reveal>
+    <div class="project-head">
+      <div class="p-meta">
+        <span class="p-index">2026</span>
+        <h2>IPRADE<br>&amp; CBDE</h2>
+        <p class="p-role">Diagramação</p>
+      </div>
+      <div class="p-meta">
+        <p class="p-desc">Diagramação do site do Instituto Paranaense de Direito Eleitoral e do X Congresso Brasileiro de Direito Eleitoral. Um sistema de páginas para conteúdo jurídico denso — institucional, artigos e notícias — organizado com hierarquia clara, ritmo de leitura e sobriedade.</p>
+      </div>
+    </div>
+
+    <div class="browser">
+      <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">iprade.com.br</span></div>
+      <div class="viewport"><img src="assets/iprade/Desktop-home-1.jpg" alt="IPRADE — página inicial" loading="lazy" /></div>
+    </div>
+
+    <div class="subgrid">
+      <div class="card"><span class="tag">Artigos</span><div class="crop"><img src="assets/iprade/Desktop-artigos-1.jpg" alt="IPRADE — listagem de artigos" loading="lazy"></div></div>
+      <div class="card"><span class="tag">Artigo · leitura</span><div class="crop"><img src="assets/iprade/Desktop-texto-1.jpg" alt="IPRADE — página de artigo" loading="lazy"></div></div>
+    </div>
+  </article>
+
+  <!-- 02 HIPERZOO -->
+  <article class="project" data-reveal>
+    <div class="project-head">
+      <div class="p-meta">
+        <span class="p-index">2026</span>
+        <h2>Hiperzoo</h2>
+        <p class="p-role">Diagramação</p>
+      </div>
+      <div class="p-meta">
+        <p class="p-desc">Layout de e-commerce e páginas institucionais para a rede pet Hiperzoo. Diagramação de catálogo, página de produto, blog, estética e lojas — equilibrando alto volume de informação comercial com clareza, leveza e uma navegação que respira.</p>
+      </div>
+    </div>
+
+    <div class="browser">
+      <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">hiperzoo.com.br</span></div>
+      <div class="viewport"><img src="assets/hiperzoo/Desktop-produtos-1.jpg" alt="Hiperzoo — listagem de produtos" loading="lazy" /></div>
+    </div>
+
+    <div class="subgrid cols-3">
+      <div class="card"><span class="tag">Produto</span><div class="crop"><img src="assets/hiperzoo/Desktop-pag-produto-1.jpg" alt="Hiperzoo — página de produto" loading="lazy"></div></div>
+      <div class="card"><span class="tag">Blog</span><div class="crop"><img src="assets/hiperzoo/Desktop-blog-1.jpg" alt="Hiperzoo — blog" loading="lazy"></div></div>
+      <div class="card"><span class="tag">Estética pet</span><div class="crop"><img src="assets/hiperzoo/Desktop-estetica-1.jpg" alt="Hiperzoo — estética pet" loading="lazy"></div></div>
+      <div class="card"><span class="tag">Quem somos</span><div class="crop"><img src="assets/hiperzoo/Desktop-quemsomos-1.jpg" alt="Hiperzoo — quem somos" loading="lazy"></div></div>
+      <div class="card"><span class="tag">Lojas</span><div class="crop"><img src="assets/hiperzoo/Desktop-loja-1.jpg" alt="Hiperzoo — lojas" loading="lazy"></div></div>
+      <div class="card"><span class="tag">Artigo</span><div class="crop"><img src="assets/hiperzoo/Desktop-pagina-blog-1.jpg" alt="Hiperzoo — artigo do blog" loading="lazy"></div></div>
+    </div>
+  </article>
+
+  <!-- 03 CIDADE VERNACULAR -->
+  <article class="project" data-reveal>
+    <div class="project-head">
+      <div class="p-meta">
+        <span class="p-index">2017</span>
+        <h2>Cidade<br>Vernacular</h2>
+        <p class="p-role">Fotografia · Diagramação · Livro <span style="font-style:normal;opacity:.6">“CWB CITY”</span></p>
+      </div>
+      <div class="p-meta">
+        <p class="p-desc">Levantamento de referência sobre o design vernacular de Curitiba: letreiros pintados à mão, grafites, recados e tipografias espontâneas — produzidos por pessoas comuns com um único desejo, comunicar. A pesquisa virou o livro <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent)">CWB CITY</em>.</p>
+        <a class="p-link" href="https://www.behance.net/gallery/69816447/Cidade-Vernacular-Fotografia-e-Diagramacao" target="_blank" rel="noopener">Ver no Behance <span class="arw">→</span></a>
+      </div>
+    </div>
+
+    <div class="collage">
+      <figure class="c-band"><img src="assets/cidade-vernacular/cv-01.webp" alt="Cidade Vernacular — capa tipográfica"><figcaption>Identidade do projeto</figcaption></figure>
+      <figure class="c-feat"><img src="assets/cidade-vernacular/cv-04.webp" alt="Livro CWB City — miolo com tipografias"><figcaption>Livro “CWB CITY” — diagramação do miolo</figcaption></figure>
+      <figure class="c-tall"><img src="assets/cidade-vernacular/cv-06.webp" alt="Letreiro pintado à mão em detalhe"><figcaption>Lettering pintado à mão</figcaption></figure>
+      <figure class="c-half"><img src="assets/cidade-vernacular/cv-05.webp" alt="Grafite urbano — Campainha"><figcaption>Recados na rua</figcaption></figure>
+      <figure class="c-half"><img src="assets/cidade-vernacular/cv-07.webp" alt="Placa Pierogi Original"><figcaption>@cidadevernacular</figcaption></figure>
+      <figure class="c-half"><img src="assets/cidade-vernacular/cv-02.png" alt="Spread editorial — cortador de frios"><figcaption>Curitiba que não está no catálogo</figcaption></figure>
+      <figure class="c-half"><img src="assets/cidade-vernacular/cv-03.png" alt="Mapa do percurso"><figcaption>Percurso de pesquisa</figcaption></figure>
+    </div>
+  </article>
+
+  <!-- 04 BIENAL -->
+  <article class="project" data-reveal>
+    <div class="project-head">
+      <div class="p-meta">
+        <span class="p-index">2018</span>
+        <h2>Bienal de<br>Quadrinhos</h2>
+        <p class="p-role">Sistema visual · Sinalização · Design gráfico</p>
+      </div>
+      <div class="p-meta">
+        <p class="p-desc">Sistema visual e sinalização da Bienal de Quadrinhos de Curitiba 2018. Um sistema robusto para orientar os 30 mil visitantes pelos salões do MuMA ao longo de quatro dias, dando palco aos quadrinistas de todo o Brasil. <em style="font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent)">Com Amanda Camargo e Vitor Silva.</em></p>
+        <a class="p-link" href="https://www.behance.net/gallery/147955935/Bienal-de-Quadrinhos-de-Curitiba-2018-Sistema-Visual" target="_blank" rel="noopener">Ver no Behance <span class="arw">→</span></a>
+      </div>
+    </div>
+
+    <div class="collage">
+      <figure class="c-feat"><img src="assets/bienal/bn-04.webp" alt="Sinalização nos salões do MuMA"><figcaption>Sinalização — salões do MuMA</figcaption></figure>
+      <figure class="c-tall"><img src="assets/bienal/bn-05.jpg" alt="Totem de programação"><figcaption>Totem de programação</figcaption></figure>
+      <figure class="c-wide"><img src="assets/bienal/bn-07.jpg" alt="Mesa de debate com banner do evento"><figcaption>Sistema aplicado ao palco</figcaption></figure>
+      <figure class="c-sq"><img src="assets/bienal/bn-02.jpg" alt="Debate com banner amarelo"><figcaption>Banners de mesa</figcaption></figure>
+      <figure class="c-half"><img src="assets/bienal/bn-01.webp" alt="Mesa de debate"><figcaption>Identidade no ambiente</figcaption></figure>
+      <figure class="c-half"><img src="assets/bienal/bn-06.jpg" alt="Aplicação do sistema visual"><figcaption>Aplicações</figcaption></figure>
+    </div>
+  </article>
+</main>
+
+<!-- FOOTER -->
+<footer id="contato">
+  <div id="sobre" class="ft-cta">
+    Vamos<br>conversar <a href="mailto:contato@thalytacavalli.com">↗</a>
+  </div>
+  <div class="ft-row">
+    <div class="ft-links">
+      <a href="mailto:contato@thalytacavalli.com">E-mail</a>
+      <a href="https://www.behance.net/gallery/69816447/Cidade-Vernacular-Fotografia-e-Diagramacao" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="ft-meta">Thalyta Cavalli · Curitiba/PR · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.01,rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
